@@ -1,0 +1,220 @@
+/* importando as fontes usada no projeto */
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Source+Sans+3:wght@300;400;500&display=swap');
+
+:root {
+    --cor-primaria:       #7A1F1F;  
+    --cor-primaria-hover: #6A1A1A;
+    --cor-acento:         #C27070;   
+    --cor-fundo-pagina:   #FDF5F5;  
+    --cor-fundo-card:     #FFFFFF;  
+    --cor-borda:          #E8CACA;   
+    --cor-texto-titulo:   #3D1A1A;  
+    --cor-texto-corpo:    #5A3A3A; 
+    --cor-texto-muted:    #A07070;   
+    --cor-numero:         #D4A0A0;        
+    --cor-rodape-texto:   #B09090;
+    --cor-divider:        #EDD5D5;
+
+--fonte-titulo: 'Lora', Georgia, serif;
+--fonte-corpo:  'Source Sans 3', 'Segoe UI', sans-serif;
+
+--raio-card:   10px;
+--raio-botao:  8px;
+--sombra-card: 0 1px 4px rgba(100, 30, 30, 0.07);
+}
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--fonte-corpo);
+    background-color: var(--cor-fundo-pagina);
+    color: var(--cor-texto-corpo);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.site-header {
+    background-color: var(--cor-primaria);
+    padding: 2.5rem 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.site-header::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    pointer-events: none;
+}
+
+.site-header::after {
+    content: '';
+    position: absolute;
+    bottom: -70px;
+    left: 35%;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    pointer-events: none;
+}
+
+.header-logo-area {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.header-logo-area svg {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+}
+
+.header-titulo {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #FFF0F0;
+    line-height: 1.2;
+}
+
+.header-subtitulo {
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255, 220, 220, 0.7);
+    margin-top: 2px;
+}
+
+.header-tagline {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: rgba(255, 220, 220, 0.65);
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+}
+
+.site-main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+}
+
+.section-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cor-acento);
+    margin-bottom: 1rem;
+}
+
+.nav-formularios {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+}
+
+.nav-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--cor-fundo-card);
+    border: 0.5px solid var(--cor-borda);
+    border-radius: var(--raio-card);
+    padding: 14px 18px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: var(--sombra-card);
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.nav-card:hover {
+    border-color: var(--cor-acento);
+    background-color: #FFF8F8;
+}
+
+.nav-card-numero {
+    font-family: var(--fonte-titulo);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--cor-numero);
+    min-width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.nav-card-texto {
+    flex: 1;
+}
+
+.nav-card-titulo {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--cor-texto-titulo);
+    margin-bottom: 2px;
+}
+
+.nav-card-descricao {
+    font-size: 0.78rem;
+    font-weight: 300;
+    color: var(--cor-texto-muted);
+}
+
+.nav-card-seta {
+    font-size: 1.2rem;
+    color: var(--cor-numero);
+    flex-shrink: 0;
+}
+
+.divisor {
+    border: none;
+    border-top: 0.5px solid var(--cor-divider);
+    margin: 2rem 0;
+}
+
+.site-footer {
+    text-align: center;
+    font-size: 0.72rem;
+    font-weight: 300;
+    color: var(--cor-rodape-texto);
+    line-height: 1.7;
+    padding-bottom: 2rem;
+}
+
+.text-center { 
+    text-align: center; 
+}
+
+.mt-1 { 
+    margin-top: 0.5rem; 
+}
+
+.mt-2 { 
+    margin-top: 1rem; 
+}
+
+.mt-3 { 
+    margin-top: 1.5rem;
+}
