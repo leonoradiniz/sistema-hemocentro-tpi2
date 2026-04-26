@@ -70,6 +70,24 @@
     margin-top: 2px;
 }
 
+.campo-checkbox label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--cor-texto-corpo);
+    cursor: pointer;
+}
+
+.campo-checkbox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    accent-color: var(--cor-primaria);
+    cursor: pointer;
+}
+
 .obrigatorio {
     color: var(--cor-primaria);
     font-weight: 600;
@@ -94,6 +112,10 @@
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
     appearance: none;
     -webkit-appearance: none;
+}
+
+.campo-checkbox {
+    margin-top: 0.75rem;
 }
 
 .formulario input::placeholder {
