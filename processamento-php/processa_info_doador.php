@@ -4,7 +4,7 @@
 
         echo("O campo $campoVazio não foi preenchido! Este campo é obrigatório.");
     }
-
+        
 
     if (isset ($_POST['nome']) && !empty(trim($_POST['nome']))) {
         $nome = trim($_POST['nome']);
