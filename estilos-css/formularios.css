@@ -136,6 +136,30 @@
     margin-top: 1rem;
 }
 
+.formulario textarea {
+    width: 100%;
+    padding: 9px 12px;
+    font-family: var(--fonte-corpo);
+    font-size: 0.9rem;
+    color: var(--cor-texto-corpo);
+    background: var(--cor-fundo-pagina);
+    border: 0.5px solid var(--cor-borda);
+    border-radius: var(--raio-botao);
+    outline: none;
+    resize: vertical;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.formulario textarea::placeholder {
+    color: var(--cor-numero);
+    font-weight: 300;
+}
+
+.formulario textarea:focus {
+    border-color: var(--cor-acento);
+    box-shadow: 0 0 0 3px rgba(194, 112, 112, 0.12);
+}
+
 .form-acoes {
     display: flex;
     justify-content: flex-end;
