@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triagem de Saúde Geral — Hemocentro</title>
+    <link rel="stylesheet" href="../estilos-css/global.css">
+    <link rel="stylesheet" href="../estilos-css/formularios.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-logo-area">
+            <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M19 4 C19 4 7 17 7 24 C7 30.6 12.4 35 19 35 C25.6 35 31 30.6 31 24 C31 17 19 4 19 4Z"
+                      fill="rgba(255,255,255,0.13)" stroke="rgba(255,220,220,0.45)" stroke-width="1.2"/>
+                <path d="M19 11 C19 11 11 20 11 25 C11 29.4 14.6 32 19 32"
+                      stroke="rgba(255,220,220,0.35)" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+
+            <div>
+                <h1 class="header-titulo">Hemocentro</h1>
+                <p class="header-subtitulo">Sistema de Cadastro para Doação</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="site-main">
+
+        <a class="voltar-link" href="../index.html">← Voltar à página inicial</a>
+
+        <h2 class="form-titulo">2. Triagem de Saúde Geral</h2>
+        <p class="form-descricao">Responda com sinceridade. As informações são sigilosas e essenciais para garantir a segurança da doação.</p>
+
+        <form action="../processamento-php/processa_triagem_saude.php" method="post"class="formulario">
+
+            <fieldset class="form-grupo">
+                <legend>Doenças Crônicas</legend>
+
+                <p class="campo-hint">Marque todas as condições que se aplicam a você:</p>
+
+                <div class="campo-checkbox">
+                    <label>
+                        <input type="checkbox" name="doencas_cronicas[]" value="hiv">
+                        HIV/AIDS
+                    </label>
+                </div>
+
+                <div class="campo-checkbox">
+                    <label>
+                        <input type="checkbox" name="doencas_cronicas[]" value="hepatite_b">
+                        Hepatite B
+                    </label>
+                </div>
+
+                <div class="campo-checkbox">
+                    <label>
+                        <input type="checkbox" name="doencas_cronicas[]" value="hepatite_c">
+                        Hepatite C
+                    </label>
+                </div>
+
+                <div class="campo-checkbox">
+                    <label>
+                        <input type="checkbox" name="doencas_cronicas[]" value="chagas">
+                        Doença de Chagas
+                    </label>
+                </div>
+
+                <div class="campo-checkbox">
+                    <label>
+                        <input type="checkbox" name="doencas_cronicas[]" value="cancer">
+                        Câncer
+                    </label>
+                </div>
+
+                <div class="campo-checkbox">
+                    <label>
+                        <input type="checkbox" name="doencas_cronicas[]" value="diabetes_insulina">
+                        Diabetes em uso de insulina
+                    </label>
+                </div>
+
+                <div class="campo-checkbox">
+                    <label>
+                        <input type="checkbox" name="doencas_cronicas[]" value="nenhuma">
+                        Nenhuma das anteriores
+                    </label>
+                </div>
+
+            </fieldset>
+
+            <fieldset class="form-grupo">
+                <legend>Sintomas Gripais Recentes</legend>
+
+                <p class="campo-hint">
+                    Febre, resfriado, conjuntivite, herpes labial e diarreia exigem
+                    espera de 7 dias após a cura para doação.
+                </p>
+
+                <div class="campo">
+                    <label for="sintomas_gripais">
+                        Quando você teve febre, resfriado, conjuntivite, herpes labial ou diarreia pela última vez?
+                        <span class="obrigatorio">*</span>
+                    </label>
+                    <select id="sintomas_gripais" name="sintomas_gripais" required>
+                        <option value="">-- Selecione --</option>
+                        <option value="doente_agora">Estou doente agora</option>
+                        <option value="menos_7_dias">Há menos de 7 dias</option>
+                        <option value="mais_7_dias">Há mais de 7 dias</option>
+                        <option value="nao_tive">Não tive</option>
+                    </select>
+                </div>
+
+            </fieldset>
+
+            <fieldset class="form-grupo">
+                <legend>COVID-19</legend>
+
+                <p class="campo-hint">
+                    Assintomáticos devem aguardar 10 dias após teste positivo.
+                    Contato com caso positivo exige espera de 7 dias.
+                </p>
+
+                <div class="campo">
+                    <label for="covid">
+                        Qual é a sua situação em relação à COVID-19?
+                        <span class="obrigatorio">*</span>
+                    </label>
+                    <select id="covid" name="covid" required>
+                        <option value="">-- Selecione --</option>
+                        <option value="positivo_recente">Testei positivo há menos de 10 dias</option>
+                        <option value="contato_recente">Tive contato com caso positivo há menos de 7 dias</option>
+                        <option value="recuperado">Me recuperei ou tive contato há mais de 10 dias</option>
+                        <option value="nao_tive">Não tive e não tive contato recente</option>
+                    </select>
+                </div>
+
+            </fieldset>
+
+            <fieldset class="form-grupo">
+                <legend>Eventos Recentes com Período de Espera</legend>
+
+                <p class="campo-hint">
+                    Marque todos os eventos que ocorreram nos últimos 6 meses.
+                    O hemocentro avaliará o período de espera necessário no momento do agendamento.
+                </p>
+
+                <div class="campo-checkbox">
+                    <label>
+                        <input type="checkbox" name="eventos_recentes[]" value="vacina">
+                        Tomei alguma vacina recentemente
+                    </label>
+                </div>
+
+                <div class="campo-checkbox">
+                    <label>
+                        <input type="checkbox" name="eventos_recentes[]" value="cirurgia_pequena">
+                        Fiz cirurgia de pequeno porte nos últimos 3 meses
+                    </label>
+                </div>
+
+                <div class="campo-checkbox">
+                    <label>
+                        <input type="checkbox" name="eventos_recentes[]" value="cirurgia_grande">
+                        Fiz cirurgia de grande porte nos últimos 6 meses
+                    </label>
+                </div>
+
+                <div class="campo-checkbox">
+                    <label>
+                        <input type="checkbox" name="eventos_recentes[]" value="odontologico">
+                        Realizei procedimento odontológico invasivo recentemente (canal, extração)
+                    </label>
+                </div>
+
+                <div class="campo-checkbox">
+                    <label>
+                        <input type="checkbox" name="eventos_recentes[]" value="nenhum">
+                        Nenhum dos anteriores
+                    </label>
+                </div>
+
+            </fieldset>
+
+            <fieldset class="form-grupo">
+                <legend>Gravidez e Pós-parto</legend>
+
+                <p class="campo-hint">
+                    Gestantes, lactantes e pessoas que tiveram parto ou aborto
+                    há menos de 3 meses não podem realizar a doação.
+                </p>
+
+                <div class="campo">
+                    <label for="gravidez">
+                        Qual é a sua situação atual?
+                        <span class="obrigatorio">*</span>
+                    </label>
+                    <select id="gravidez" name="gravidez" required>
+                        <option value="">-- Selecione --</option>
+                        <option value="gravida">Estou grávida</option>
+                        <option value="amamentando">Estou amamentando</option>
+                        <option value="pos_parto_recente">Tive parto ou aborto há menos de 3 meses</option>
+                        <option value="nenhuma">Nenhuma das anteriores</option>
+                    </select>
+                </div>
+
+            </fieldset>
+
+            <div class="form-acoes">
+                <input type="reset" value="Limpar" class="btn-secundario">
+                <input type="submit" value="Enviar triagem" class="btn-primario">
+            </div>
+
+        </form>
+
+    </main>
+
+    <footer class="site-footer">
+        <a class="btn-voltar" href="../index.html">← Voltar à página inicial</a>
+        <p>Suas informações são tratadas com sigilo e utilizadas exclusivamente para fins de triagem e agendamento.</p>
+    </footer>
+
+</body>
+</html>
