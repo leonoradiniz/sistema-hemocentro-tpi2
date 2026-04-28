@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro para Doação de Medula (REDOME) — Hemocentro</title>
+    <link rel="stylesheet" href="../estilos-css/global.css">
+    <link rel="stylesheet" href="../estilos-css/formularios.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-logo-area">
+            <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M19 4 C19 4 7 17 7 24 C7 30.6 12.4 35 19 35 C25.6 35 31 30.6 31 24 C31 17 19 4 19 4Z"
+                      fill="rgba(255,255,255,0.13)" stroke="rgba(255,220,220,0.45)" stroke-width="1.2"/>
+                <path d="M19 11 C19 11 11 20 11 25 C11 29.4 14.6 32 19 32"
+                      stroke="rgba(255,220,220,0.35)" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+
+            <div>
+                <h1 class="header-titulo">Hemocentro</h1>
+                <p class="header-subtitulo">Sistema de Cadastro para Doação</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="site-main">
+
+        <a class="voltar-link" href="../index.html">← Voltar à página inicial</a>
+
+        <h2 class="form-titulo">4. Cadastro para Doação de Medula (REDOME)</h2>
+        <p class="form-descricao">
+            O REDOME é o Registro Nacional de Doadores de Medula Óssea. Ao se cadastrar,
+            você poderá ser chamado a salvar a vida de um paciente compatível em qualquer
+            parte do Brasil.
+        </p>
+
+        <form action="../processamento-php/processa_cadastro_medula.php" method="post" class="formulario">
+
+            <fieldset class="form-grupo">
+                <legend>Etnia</legend>
+
+                <p class="campo-hint">
+                    A compatibilidade de medula óssea tem forte relação com a etnia do doador e do receptor.
+                    Essa informação é essencial para ampliar as chances de encontrar um par compatível.
+                </p>
+
+                <div class="campo">
+                    <label for="etnia">
+                        Etnia autodeclarada <span class="obrigatorio">*</span>
+                    </label>
+                    <select id="etnia" name="etnia" required>
+                        <option value="">-- Selecione --</option>
+                        <option value="branca">Branca</option>
+                        <option value="preta">Preta</option>
+                        <option value="parda">Parda</option>
+                        <option value="amarela">Amarela</option>
+                        <option value="indigena">Indígena</option>
+                    </select>
+                </div>
+
+            </fieldset>
+
+            <fieldset class="form-grupo">
+                <legend>Dados Físicos</legend>
+
+                <div class="campo">
+                    <label for="altura">
+                        Altura (cm) <span class="obrigatorio">*</span>
+                    </label>
+                    <input type="number" id="altura" name="altura" required
+                        min="100" max="250" step="1" placeholder="Ex: 170">
+                </div>
+
+            </fieldset>
+
+            <fieldset class="form-grupo">
+                <legend>Cadastro no REDOME</legend>
+
+                <div class="campo">
+                    <label for="cadastro_anterior">
+                        Já foi cadastrado no REDOME anteriormente?
+                        <span class="obrigatorio">*</span>
+                    </label>
+                    <select id="cadastro_anterior" name="cadastro_anterior" required>
+                        <option value="">-- Selecione --</option>
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                        <option value="nao_sei">Não sei</option>
+                    </select>
+                </div>
+
+            </fieldset>
+
+            <fieldset class="form-grupo">
+                <legend>Histórico Familiar</legend>
+
+                <p class="campo-hint">
+                    Ter parente de primeiro grau com leucemia ou doença que necessite
+                    de transplante de medula aumenta a importância do seu cadastro.
+                </p>
+
+                <div class="campo">
+                    <label for="historico_familiar">
+                        Tem parente de primeiro grau com leucemia ou doença que necessite de transplante de medula?
+                        <span class="obrigatorio">*</span>
+                    </label>
+                    <select id="historico_familiar" name="historico_familiar" required>
+                        <option value="">-- Selecione --</option>
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                    </select>
+                </div>
+
+            </fieldset>
+
+            <fieldset class="form-grupo">
+                <legend>Disponibilidade para Doação</legend>
+
+                <p class="campo-hint">
+                    Um doador compatível pode ser encontrado em qualquer estado do Brasil.
+                    Confirme sua disponibilidade para ser contactado independentemente da localização.
+                </p>
+
+                <div class="campo">
+                    <label for="disponibilidade_nacional">
+                        Aceita ser contactado para doação em qualquer estado do Brasil?
+                        <span class="obrigatorio">*</span>
+                    </label>
+                    <select id="disponibilidade_nacional" name="disponibilidade_nacional" required>
+                        <option value="">-- Selecione --</option>
+                        <option value="sim">Sim, aceito ser contactado em qualquer estado</option>
+                        <option value="nao">Não, prefiro ser contactado apenas no meu estado</option>
+                    </select>
+                </div>
+
+            </fieldset>
+
+            <div class="form-acoes">
+                <input type="reset" value="Limpar" class="btn-secundario">
+                <input type="submit" value="Enviar cadastro" class="btn-primario">
+            </div>
+
+        </form>
+
+    </main>
+
+    <footer class="site-footer">
+        <a class="btn-voltar" href="../index.html">← Voltar à página inicial</a>
+        <p>Suas informações são tratadas com sigilo e utilizadas exclusivamente para fins de triagem e agendamento.</p>
+    </footer>
+
+</body>
+</html>
