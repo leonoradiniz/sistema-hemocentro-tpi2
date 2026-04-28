@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triagem de Comportamento e Viagens — Hemocentro</title>
+    <link rel="stylesheet" href="../estilos-css/global.css">
+    <link rel="stylesheet" href="../estilos-css/formularios.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-logo-area">
+            <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M19 4 C19 4 7 17 7 24 C7 30.6 12.4 35 19 35 C25.6 35 31 30.6 31 24 C31 17 19 4 19 4Z"
+                      fill="rgba(255,255,255,0.13)" stroke="rgba(255,220,220,0.45)" stroke-width="1.2"/>
+                <path d="M19 11 C19 11 11 20 11 25 C11 29.4 14.6 32 19 32"
+                      stroke="rgba(255,220,220,0.35)" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+
+            <div>
+                <h1 class="header-titulo">Hemocentro</h1>
+                <p class="header-subtitulo">Sistema de Cadastro para Doação</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="site-main">
+
+        <a class="voltar-link" href="../index.html">← Voltar à página inicial</a>
+
+        <h2 class="form-titulo">3. Triagem de Comportamento e Viagens</h2>
+        <p class="form-descricao">Responda com sinceridade. As informações são sigilosas e essenciais para garantir a segurança da doação.</p>
+
+        <form action="../processamento-php/processa_triagem_comportamento.php" method="post" class="formulario">
+
+            <fieldset class="form-grupo">
+                <legend>Viagens Recentes</legend>
+
+                <p class="campo-hint">
+                    Viagens para áreas endêmicas de malária, febre amarela ou dengue
+                    podem exigir período de espera para doação.
+                </p>
+
+                <div class="campo">
+                    <label for="viagem_area_risco">
+                        Viajou para área de risco de malária, febre amarela ou dengue nos últimos 12 meses?
+                        <span class="obrigatorio">*</span>
+                    </label>
+                    <select id="viagem_area_risco" name="viagem_area_risco" required>
+                        <option value="">-- Selecione --</option>
+                        <option value="menos_3_meses">Sim, há menos de 3 meses</option>
+                        <option value="entre_3_12_meses">Sim, entre 3 e 12 meses atrás</option>
+                        <option value="nao">Não viajei</option>
+                    </select>
+                </div>
+
+            </fieldset>
+
+            <fieldset class="form-grupo">
+                <legend>Tatuagem e Piercing</legend>
+
+                <p class="campo-hint">
+                    Tatuagens e piercings realizados nos últimos 6 meses impedem a doação
+                    devido ao risco de transmissão de infecções.
+                </p>
+
+                <div class="campo">
+                    <label for="tatuagem_piercing">
+                        Fez tatuagem ou piercing nos últimos 6 meses?
+                        <span class="obrigatorio">*</span>
+                    </label>
+                    <select id="tatuagem_piercing" name="tatuagem_piercing" required>
+                        <option value="">-- Selecione --</option>
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                    </select>
+                </div>
+
+            </fieldset>
+
+            <fieldset class="form-grupo">
+                <legend>Uso de Drogas Injetáveis</legend>
+
+                <p class="campo-hint">
+                    O uso de drogas injetáveis é um impedimento permanente para doação
+                    de sangue devido ao risco de transmissão de doenças.
+                </p>
+
+                <div class="campo">
+                    <label for="drogas_injetaveis">
+                        Fez uso de drogas injetáveis?
+                        <span class="obrigatorio">*</span>
+                    </label>
+                    <select id="drogas_injetaveis" name="drogas_injetaveis" required>
+                        <option value="">-- Selecione --</option>
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                    </select>
+                </div>
+
+            </fieldset>
+
+            <fieldset class="form-grupo">
+                <legend>Privação de Liberdade</legend>
+
+                <p class="campo-hint">
+                    Pessoas que estiveram em situação de privação de liberdade
+                    nos últimos 12 meses não podem realizar a doação.
+                </p>
+
+                <div class="campo">
+                    <label for="privacao_liberdade">
+                        Esteve preso ou em situação de privação de liberdade nos últimos 12 meses?
+                        <span class="obrigatorio">*</span>
+                    </label>
+                    <select id="privacao_liberdade" name="privacao_liberdade" required>
+                        <option value="">-- Selecione --</option>
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                    </select>
+                </div>
+
+            </fieldset>
+
+            <fieldset class="form-grupo">
+                <legend>Procedimentos com Material Perfurocortante</legend>
+
+                <p class="campo-hint">
+                    Procedimentos como acupuntura e escarificação realizados com
+                    material não estéril exigem período de espera para doação.
+                </p>
+
+                <div class="campo">
+                    <label for="perfurocortante">
+                        Realizou procedimento com material perfurocortante não estéril nos últimos 6 meses?
+                        <span class="obrigatorio">*</span>
+                    </label>
+                    <select id="perfurocortante" name="perfurocortante" required>
+                        <option value="">-- Selecione --</option>
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                    </select>
+                </div>
+
+            </fieldset>
+
+            <div class="form-acoes">
+                <input type="reset" value="Limpar" class="btn-secundario">
+                <input type="submit" value="Enviar triagem" class="btn-primario">
+            </div>
+
+        </form>
+
+    </main>
+
+    <footer class="site-footer">
+        <a class="btn-voltar" href="../index.html">← Voltar à página inicial</a>
+        <p>Suas informações são tratadas com sigilo e utilizadas exclusivamente para fins de triagem e agendamento.</p>
+    </footer>
+
+</body>
+</html>
