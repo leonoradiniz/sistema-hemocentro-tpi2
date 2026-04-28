@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Doação — Hemocentro</title>
+    <link rel="stylesheet" href="../estilos-css/global.css">
+    <link rel="stylesheet" href="../estilos-css/formularios.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-logo-area">
+            <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M19 4 C19 4 7 17 7 24 C7 30.6 12.4 35 19 35 C25.6 35 31 30.6 31 24 C31 17 19 4 19 4Z"
+                      fill="rgba(255,255,255,0.13)" stroke="rgba(255,220,220,0.45)" stroke-width="1.2"/>
+                <path d="M19 11 C19 11 11 20 11 25 C11 29.4 14.6 32 19 32"
+                      stroke="rgba(255,220,220,0.35)" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+
+            <div>
+                <h1 class="header-titulo">Hemocentro</h1>
+                <p class="header-subtitulo">Sistema de Cadastro para Doação</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="site-main">
+
+        <a class="voltar-link" href="../index.html">← Voltar à página inicial</a>
+
+        <h2 class="form-titulo">5. Agendamento de Doação</h2>
+        <p class="form-descricao">Escolha a data, turno e unidade de sua preferência para realizar a doação.</p>
+
+        <form action="../processamento-php/processa_agendamento.php" method="post" class="formulario">
+
+            <fieldset class="form-grupo">
+                <legend>Identificação do Doador</legend>
+
+                <p class="campo-hint">
+                    Informe o CPF utilizado no cadastro para vincular o agendamento ao seu registro.
+                </p>
+
+                <div class="campo">
+                    <label for="cpf">
+                        CPF <span class="obrigatorio">*</span>
+                    </label>
+                    <input type="text" id="cpf" name="cpf" required
+                        inputmode="numeric" maxlength="11" placeholder="Somente números">
+                </div>
+
+            </fieldset>
+
+            <fieldset class="form-grupo">
+                <legend>Data e Turno</legend>
+
+                <div class="campo">
+                    <label for="data_doacao">
+                        Data preferida para doação <span class="obrigatorio">*</span>
+                    </label>
+                    <input type="date" id="data_doacao" name="data_doacao" required>
+                </div>
+
+                <div class="campo">
+                    <label for="turno">
+                        Turno preferido <span class="obrigatorio">*</span>
+                    </label>
+                    <select id="turno" name="turno" required>
+                        <option value="">-- Selecione --</option>
+                        <option value="manha">Manhã</option>
+                        <option value="tarde">Tarde</option>
+                    </select>
+                </div>
+
+            </fieldset>
+
+            <fieldset class="form-grupo">
+                <legend>Unidade de Atendimento</legend>
+
+                <div class="campo">
+                    <label for="unidade">
+                        Unidade de atendimento <span class="obrigatorio">*</span>
+                    </label>
+                    <select id="unidade" name="unidade" required>
+                        <option value="">-- Selecione --</option>
+                        <option value="hemominas_uberlandia">Hemominas — Uberlândia</option>
+                        <option value="hemominas_bh">Hemominas — Belo Horizonte</option>
+                        <option value="hemominas_juiz_fora">Hemominas — Juiz de Fora</option>
+                        <option value="hemominas_montes_claros">Hemominas — Montes Claros</option>
+                    </select>
+                </div>
+
+            </fieldset>
+
+            <fieldset class="form-grupo">
+                <legend>Observações</legend>
+
+                <div class="campo">
+                    <label for="observacoes">Observações adicionais <span class="campo-hint">(opcional)</span></label>
+                    <textarea id="observacoes" name="observacoes"
+                            rows="4" placeholder="Informe qualquer observação relevante para o agendamento..."></textarea>
+                </div>
+
+            </fieldset>
+
+            <div class="form-acoes">
+                <input type="reset" value="Limpar" class="btn-secundario">
+                <input type="submit" value="Confirmar agendamento" class="btn-primario">
+            </div>
+
+        </form>
+
+    </main>
+
+    <footer class="site-footer">
+        <a class="btn-voltar" href="../index.html">← Voltar à página inicial</a>
+        <p>Suas informações são tratadas com sigilo e utilizadas exclusivamente para fins de triagem e agendamento.</p>
+    </footer>
+
+</body>
+</html>
